@@ -1,5 +1,7 @@
 package com.life.spring.config;
 
+import com.life.spring.aop.LogAspects;
+import com.life.spring.bean.MathCalculator;
 import com.life.spring.bean.Person;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.*;
@@ -12,9 +14,19 @@ import org.springframework.context.annotation.*;
  * @Copyright: 2020 All Rights Reserved.北京西天取经科技有限公司
  */
 @Configuration
-@ComponentScan({"com.life.spring.bean","com.life.spring.aop"})
+//@ComponentScan({"com.life.spring.bean","com.life.spring.aop"})
 @Slf4j
 @EnableAspectJAutoProxy
 public class AopConfig01 {
+
+    @Bean
+    public MathCalculator mathCalculator(){
+        return new MathCalculator();
+    }
+
+    @Bean
+    public LogAspects logAspects(){
+        return new LogAspects();
+    }
 
 }

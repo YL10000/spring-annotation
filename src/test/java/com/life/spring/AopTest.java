@@ -23,7 +23,7 @@ public class AopTest {
     public void test01(){
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AopConfig01.class);
         printBeans(applicationContext);
-        applicationContext.getBean(MathCalculator.class).div(1,0);
+        applicationContext.getBean(MathCalculator.class).div(6,3);
     }
 
     private void printBeans(ApplicationContext applicationContext){
